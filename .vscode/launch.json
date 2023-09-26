@@ -13,8 +13,16 @@
             "justMyCode": true,
             "args": [
                 "-u", "https://arxiv.org/pdf/2309.12095",
-                "-p", "test"
+                "-p", "paper"
             ]
+        },
+        {
+            "name": "Test Python",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
         }
     ]
 }

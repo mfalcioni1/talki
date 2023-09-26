@@ -31,15 +31,15 @@ def main():
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('--url', '-u', type=str, required=True)
-    parser.add_argument('--save_path', '-p', type=str, default="paper", required=True)
+    parser.add_argument('--save_path', '-p', type=str, default="paper")
     
     args = parser.parse_args()
     url = args.url
     save_path = args.save_path
-    pdf_save_path = os.path.join(os.getcwd(), f"{save_path}")
+    pdf_save_path = os.path.join(os.getcwd(), f"{save_path}.pdf")
     download_pdf(url, pdf_save_path)
 
-    pdf_text = extract_text_from_pdf(save_path)
+    pdf_text = extract_text_from_pdf(f"{save_path}.pdf")
     text_save_path = os.path.join(os.getcwd(), f"{save_path}.txt")
     save_text(pdf_text, text_save_path)
 
